@@ -1,0 +1,9 @@
+ul {
+	list-style-type: none;
+}
+
+form fieldset ul li label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
