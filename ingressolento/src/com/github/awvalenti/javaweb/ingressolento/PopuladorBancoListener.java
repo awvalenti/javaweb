@@ -1,4 +1,4 @@
-package com.github.awvalenti.javaweb.exemplo1.ingressolento;
+package com.github.awvalenti.javaweb.ingressolento;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

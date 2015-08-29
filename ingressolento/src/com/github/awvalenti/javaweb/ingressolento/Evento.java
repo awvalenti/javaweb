@@ -1,4 +1,4 @@
-package com.github.awvalenti.javaweb.exemplo1.ingressolento;
+package com.github.awvalenti.javaweb.ingressolento;
 
 public class Evento {
 
