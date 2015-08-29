@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				request.getSession().setAttribute("usuarioLogado", rs.getString("nomeUsuario"));
-				request.setAttribute("mensagem", "Usuario logado com sucesso!");
+				request.setAttribute("mensagem", "Sucesso no login!");
 			} else {
 				request.setAttribute("mensagem", "Erro no login: usuario/senha desconhecido(s)");
 			}
@@ -36,6 +36,12 @@ public class LoginServlet extends HttpServlet {
 			throw new RuntimeException(e);
 		}
 
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
+			IOException {
+		doPost(req, resp);
 	}
 
 }

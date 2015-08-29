@@ -16,29 +16,34 @@
 
 	<section>
 		<p>${mensagem}</p>
-		<c:if test="${usuarioLogado}">
-			<p>Usuario: ${usuarioLogado}</p>
-		</c:if>
-		<c:if test="${empty usuarioLogado}">
-			<h4>${login}</h4>
-			<form action="login" method="post">
-				<fieldset>
-					<ul>
-						<li>
-							<label>${nomeUsuario}</label>
-							<input name="nomeUsuario">
-						</li>
-						<li>
-							<label>${senha}</label>
-							<input name="senha" type="password">
-						</li>
-						<li>
-							<button>${entrar}</button>
-						</li>
-					</ul>
-				</fieldset>
-			</form>
-		</c:if>
+		<c:choose>
+			<c:when test="${not empty usuarioLogado}">
+				<p>Usuario: ${usuarioLogado}</p>
+				<form action="logout" method="post">
+					<button>Logout</button>
+				</form>
+			</c:when>
+			<c:otherwise>
+				<h4>${login}</h4>
+				<form action="login">
+					<fieldset>
+						<ul>
+							<li>
+								<label>${nomeUsuario}</label>
+								<input name="nomeUsuario">
+							</li>
+							<li>
+								<label>${senha}</label>
+								<input name="senha" type="password">
+							</li>
+							<li>
+								<button>${entrar}</button>
+							</li>
+						</ul>
+					</fieldset>
+				</form>
+			</c:otherwise>
+		</c:choose>
 	</section>
 	
 	<section>
@@ -52,6 +57,11 @@
 							alt="Foto do evento ${evento.nome}">
 						${evento.descricao}
 					</p>
+					<c:if test="${not empty usuarioLogado}">
+						<p>
+							<a href="comprar-ingresso?evento.id=${evento.id}" class="comprar">Comprar ingresso</a>
+						</p>
+					</c:if>
 				</li>
 			</c:forEach>
 		</ul>

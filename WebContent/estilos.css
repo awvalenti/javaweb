@@ -10,8 +10,14 @@ form fieldset ul li label {
 li.evento {
 	border: thin dotted gray;
 	padding: 20px;
+	margin-top: 20px;
 }
 
-li.evento {
-	margin-top: 20px;
+li.evento img {
+	display: block;
+	margin-bottom: 10px;
+}
+
+a.comprar {
+	font-size: 18pt;
 }
