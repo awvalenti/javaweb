@@ -1,7 +1,22 @@
 # ingressolento
-Aplicação web Java simulando um site de compra de ingressos.
+Aplicação web Java simulando um site de compra de ingressos, com vários problemas.
 
-Tecnologias: servlet, JSP, sessão, JDBC
+### Tecnologias
+- Servlet
+- JSP
+- Sessão
+- JDBC
 
-Finalidade: usar como exercício. Aluno deve identificar as partes boas e as
-partes ruins dessa implementação.
+## Exercícios
+1. Avaliação da versão atual
+  * Rode o projeto e use o sistema
+  * Leia o código do projeto
+  * Liste todos os problemas encontrados,
+    tanto do ponto de vista do usuário como do desenvolvedor
+  * Descreva possíveis soluções para esses problemas
+
+2. Fazer alterações no projeto
+  1. Acrescentar um novo evento à listagem
+  2. Para cada evento, exibir também a cidade onde será realizado
+  3. Armazenar a cidade onde o usuário reside
+  4. Na listagem de eventos, mostrar primeiro os que ocorrem na cidade do usuário
