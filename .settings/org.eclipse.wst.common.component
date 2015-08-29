@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="javaweb.exemplo1.ingressolento">
+    <wb-module deploy-name="javaweb.ingressolento">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/javaweb.exemplo1.ingressolento/build/classes"/>
-        <property name="context-root" value="javaweb.exemplo1.ingressolento"/>
+        <property name="java-output-path" value="/javaweb.ingressolento/build/classes"/>
+        <property name="context-root" value="javaweb.ingressolento"/>
     </wb-module>
 </project-modules>
