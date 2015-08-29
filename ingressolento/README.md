@@ -1,4 +1,7 @@
 # ingressolento
-Aplicação web Java usando servlets, JSPs, sessão e JDBC. Serve como
-exercício para identificar as partes boas e as partes ruins
-dessa implementação.
+Aplicação web Java simulando um site de compra de ingressos.
+
+Tecnologias: servlet, JSP, sessão, JDBC
+
+Finalidade: usar como exercício. Aluno deve identificar as partes boas e as
+partes ruins dessa implementação.
