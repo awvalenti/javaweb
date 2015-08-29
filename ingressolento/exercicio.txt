@@ -1,1 +1,4 @@
-- Encontre os problemas existentes no codigo atual
+- Liste todos os problemas encontrados no codigo atual
+- Descreva possiveis solucoes para esses problemas
+
+Dica: so' comece a pensar em solucoes depois de encontrar todos os problemas!
