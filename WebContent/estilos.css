@@ -1,3 +1,8 @@
+header {
+	border-bottom: thin dotted black;
+	margin-bottom: 30px;
+}
+
 ul {
 	list-style-type: none;
 	padding-left: 0;
@@ -13,7 +18,12 @@ li.evento {
 	margin-top: 20px;
 }
 
-li.evento img {
+.evento {
+	background-color: #FEFFD9;
+	padding: 20px;
+}
+
+.evento img {
 	display: block;
 	margin-bottom: 10px;
 }

@@ -17,11 +17,12 @@
 	<section>
 		<p>${mensagem}</p>
 		<c:choose>
-			<c:when test="${not empty usuarioLogado}">
-				<p>Usuario: ${usuarioLogado}</p>
+			<c:when test="${not empty idUsuarioLogado}">
+				<p>Usuario: ${nomeUsuarioLogado}</p>
 				<form action="logout" method="post">
 					<button>Logout</button>
 				</form>
+				<p>Voce ja comprou ${quantidadeIngressosComprados} ingresso(s)</p>
 			</c:when>
 			<c:otherwise>
 				<h4>${login}</h4>
@@ -57,7 +58,7 @@
 							alt="Foto do evento ${evento.nome}">
 						${evento.descricao}
 					</p>
-					<c:if test="${not empty usuarioLogado}">
+					<c:if test="${not empty idUsuarioLogado}">
 						<p>
 							<a href="comprar-ingresso?evento.id=${evento.id}" class="comprar">Comprar ingresso</a>
 						</p>

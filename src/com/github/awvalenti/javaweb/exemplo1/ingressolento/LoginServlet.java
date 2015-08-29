@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -26,14 +27,15 @@ public class LoginServlet extends HttpServlet {
 			stmt.setString(2, request.getParameter("senha"));
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				request.getSession().setAttribute("usuarioLogado", rs.getString("nomeUsuario"));
-				request.setAttribute("mensagem", "Sucesso no login!");
+				HttpSession session = request.getSession();
+				session.setAttribute("idUsuarioLogado", rs.getLong("id"));
+				session.setAttribute("nomeUsuarioLogado", rs.getString("nomeUsuario"));
 			} else {
 				request.setAttribute("mensagem", "Erro no login: usuario/senha desconhecido(s)");
 			}
 			request.getRequestDispatcher("index").forward(request, response);;
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new ServletException(e);
 		}
 
 	}

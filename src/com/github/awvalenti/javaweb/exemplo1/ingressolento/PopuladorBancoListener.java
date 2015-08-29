@@ -68,6 +68,18 @@ public class PopuladorBancoListener implements ServletContextListener {
 					stmt.executeUpdate();
 				}
 			}
+			try (PreparedStatement stmt = conn.prepareStatement(""
+					+ "CREATE TABLE Ingresso("
+					+ " preco DECIMAL(10, 2),"
+					+ " dataHora DATETIME,"
+					+ " usuario_id BIGINT,"
+					+ " evento_id BIGINT,"
+					+ " FOREIGN KEY (usuario_id) REFERENCES Usuario(id),"
+					+ " FOREIGN KEY (evento_id) REFERENCES Evento(id)"
+					+ ")"
+					+ "")) {
+				stmt.execute();
+			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

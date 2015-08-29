@@ -15,8 +15,8 @@ public class LogoutServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getSession().removeAttribute("usuarioLogado");
-		request.setAttribute("mensagem", "Sucesso no logout!");
+		request.getSession().removeAttribute("idUsuarioLogado");
+		request.getSession().removeAttribute("nomeUsuarioLogado");
 		request.getRequestDispatcher("index").forward(request, response);;
 	}
 
