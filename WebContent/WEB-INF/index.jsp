@@ -15,33 +15,43 @@
 	</header>
 
 	<section>
-		<h4>${login}</h4>
-		<form action="login" method="post">
-			<fieldset>
-				<ul>
-					<li>
-						<label>${nomeUsuario}</label>
-						<input name="nomeUsuario">
-					</li>
-					<li>
-						<label>${senha}</label>
-						<input name="senha" type="password">
-					</li>
-					<li>
-						<button>${entrar}</button>
-					</li>
-				</ul>
-			</fieldset>
-		</form>
+		<p>${mensagem}</p>
+		<c:if test="${usuarioLogado}">
+			<p>Usuario: ${usuarioLogado}</p>
+		</c:if>
+		<c:if test="${empty usuarioLogado}">
+			<h4>${login}</h4>
+			<form action="login" method="post">
+				<fieldset>
+					<ul>
+						<li>
+							<label>${nomeUsuario}</label>
+							<input name="nomeUsuario">
+						</li>
+						<li>
+							<label>${senha}</label>
+							<input name="senha" type="password">
+						</li>
+						<li>
+							<button>${entrar}</button>
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+		</c:if>
 	</section>
 	
 	<section>
 		<h2>${eventostxt}</h2>
 		<ul>
 			<c:forEach var="evento" items="${eventos}">
-				<li>
+				<li class="evento">
 					<h3>${evento.nome}</h3>
-					<p><img src="<c:url value='/img/evento-${evento.id}.jpg' />"> ${evento.descricao}</p>
+					<p>
+						<img src="<c:url value='/img/evento-${evento.id}.jpg' />"
+							alt="Foto do evento ${evento.nome}">
+						${evento.descricao}
+					</p>
 				</li>
 			</c:forEach>
 		</ul>

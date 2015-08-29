@@ -1,9 +1,17 @@
 ul {
 	list-style-type: none;
+	padding-left: 0;
 }
 
 form fieldset ul li label {
-	display: inline-block;
-	width: 150px;
-	text-align: right;
+	display: block;
+}
+
+li.evento {
+	border: thin dotted gray;
+	padding: 20px;
+}
+
+li.evento {
+	margin-top: 20px;
 }

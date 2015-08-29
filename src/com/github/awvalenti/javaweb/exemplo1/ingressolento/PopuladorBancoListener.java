@@ -34,14 +34,37 @@ public class PopuladorBancoListener implements ServletContextListener {
 			}
 			try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO Evento(id, nome, descricao) VALUES(?, ?, ?)")) {
 				String[][] dados = {
-						{ "Evento 1", "Um evento fenomenal, com participacao dos mais celebres artistas" },
-						{ "Evento 2", "Um evento fenomenal, com participacao dos mais celebres artistas" },
-						{ "Evento 3", "Um evento fenomenal, com participacao dos mais celebres artistas" },
+						{ "Praiotecnico", "Uma explosao sonoro-visual de cores e decibeis" },
+						{ "Virtuose Virtual", "Musica da melhor qualidade, tocada pelos antigos membros da Preto & Banda" },
+						{ "Iridolofote", "Luminescencia para os olhares mais exigentes" },
 				};
-				for (int id = 0; id < dados.length; ++id) {
-					stmt.setLong(1, id);
-					stmt.setString(2, dados[id][0]);
-					stmt.setString(3, dados[id][1]);
+				for (int i = 0; i < dados.length; ++i) {
+					stmt.setLong(1, i + 1);
+					stmt.setString(2, dados[i][0]);
+					stmt.setString(3, dados[i][1]);
+					stmt.executeUpdate();
+				}
+			}
+			try (PreparedStatement stmt = conn.prepareStatement(""
+					+ "CREATE TABLE Usuario("
+					+ " id BIGINT PRIMARY KEY,"
+					+ " nomeUsuario VARCHAR(20),"
+					+ " senha VARCHAR(20)"
+					+ ")"
+					+ "")) {
+				stmt.execute();
+			}
+			try (PreparedStatement stmt = conn.prepareStatement("INSERT INTO Usuario(id, nomeUsuario, senha) VALUES(?, ?, ?)")) {
+				String[][] dados = {
+						{ "abner", "senha1" },
+						{ "bianca", "senha2" },
+						{ "carmelo", "senha3" },
+						{ "diana", "senha4" },
+				};
+				for (int i = 0; i < dados.length; ++i) {
+					stmt.setLong(1, i + 1);
+					stmt.setString(2, dados[i][0]);
+					stmt.setString(3, dados[i][1]);
 					stmt.executeUpdate();
 				}
 			}

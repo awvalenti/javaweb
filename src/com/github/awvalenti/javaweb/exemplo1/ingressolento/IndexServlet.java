@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/inicio")
+@WebServlet("/index")
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -48,6 +48,15 @@ public class IndexServlet extends HttpServlet {
 		}
 
 		request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+	}
+
+	/**
+	 * Cai em POST quando LoginServlet faz o login e encaminha para IndexServlet
+	 */
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		doGet(req, resp);
 	}
 
 }
