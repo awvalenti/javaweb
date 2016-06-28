@@ -1,0 +1,34 @@
+header {
+	border-bottom: thin dotted black;
+	margin-bottom: 30px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+form fieldset ul li label {
+	display: block;
+}
+
+li.evento {
+	border: thin dotted gray;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.evento {
+	background-color: #FEFFD9;
+	padding: 20px;
+}
+
+.evento img {
+	display: block;
+	margin-bottom: 10px;
+}
+
+a.comprar {
+	font-size: 18pt;
+}
+
