@@ -17,7 +17,7 @@ public class Autenticador {
 	}
 
 	public void efetuarLogin(String nomeUsuario, String senha) {
-		sessao.setIdUsuarioLogado(repoUsuarios.idDoUsuario(nomeUsuario, senha));
+//		sessao.setIdUsuarioLogado(repoUsuarios.idDoUsuario(nomeUsuario, senha));
 	}
 
 	public void efetuarLogout() {

@@ -20,7 +20,6 @@ public class LoginController {
 		this.result = result;
 	}
 
-	@Post
 	public void entrar(String nomeUsuario, String senha) {
 		autenticador.efetuarLogin(nomeUsuario, senha);
 

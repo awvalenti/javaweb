@@ -27,11 +27,10 @@ public class IngressoController {
 		this.repoIngressos = repoIngressos;
 	}
 
-	public void form(long eventoId) {
+	public void visualizar(long eventoId) {
 		result.include("evento", repoEventos.comId(eventoId));
 	}
 
-	@Post
 	public void comprar(Ingresso ingresso) {
 		ingresso.setComprador(new Usuario(sessao.getIdUsuarioLogado()));
 		repoIngressos.incluir(ingresso);

@@ -20,7 +20,6 @@ public class LogoutController {
 	@Post
 	public void sair() {
 		autenticador.efetuarLogout();
-		result.redirectTo(IndexController.class).index();
 	}
 
 }
